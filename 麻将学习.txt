@@ -1,0 +1,39 @@
+1、背景图等一些图片的修改在res目录下面的json文件
+2、首屏js在src的MainLayer.js
+3、粒子系统   雪花效果实现 
+
+	博客：	https://segmentfault.com/a/1190000002953712#articleHeader1
+
+	内置粒子系统创建雪花：
+	var rainParticle = new cc.ParticleRain();
+	rainParticle.texture = cc.textureCache.addImage(res.Flame_png);
+	this.addChild(rainParticle);
+
+	自定义粒子系统：
+
+	1. 使用Particle Designer创建一个火焰的粒子文件
+	2. 文件保存为Flame.png和Flame.plist
+	3. 将Flame.png和Flame.plist导入到项目中的src
+	4. resource.js中添加
+
+	var res = {
+		Flame_png:"res/Flame.png",
+   		Flame_plist:"res/Flame.plist"
+	};
+
+	var customParticle = new cc.ParticleSystem(res.Flame_plist);
+	this.addChild(customParticle);
+4、ui转json
+
+用插件LayersToCSD(cocos3.10).jsx  安装在ps路径presets/scripts目录下
+psd文件导出时直接在脚本里选择插件，会生成images和csd文件
+可直接拖到cocos工程中
+使用cocosstudio发布资源，可在res目录下生成相应json
+
+5、 "use strict";   严格模式
+
+6、 gameData.js修改端口9000，ip:'139.129.223.20'
+7、 UpdateScene.js关闭更新
+8、 utils.js 修改访客id
+9、 开启h5音乐和音效  修改utils.js中  playmusic和playEffect    去掉判断native中的return
+10、cc.sys.isNative    false:web   true:手机

@@ -1,0 +1,239 @@
+
+JSON转换
+数组去重
+焦点问题
+动画横向滚动
+rem问题
+jq延迟对象  异步编程的处理 promises
+域名设置变量
+decodeURIComponent(） url解码
+字符串/1 转换
+时间戳转换
+history对象
+location对象
+flex
+before after
+数字格式化  每三位一个逗号
+span 行内快元素
+atom 关于git插件
+less自动编译
+jq插件
+谷歌地图
+swiper插件
+css3 object-fit 
+张鑫旭  阮一峰 廖雪峰
+gulp fis3 grunt
+webpack
+数组concat
+google地图 拖拽事件  缩放事件   绘制marker （MarkerWithLabel.js库 ） 清除标记
+定时器 延时定时器
+angular中延时定时器和定时器 $interval.cancel(timer)取消定时器
+
+git冲突其中：冲突标记<<<<<<< （7个<）与=======之间的内容是我的修改，=======与>>>>>>>之间的内容是别人的修改。
+此时，还没有任何其它垃圾文件产生。
+
+border-collapse: collapse;
+  border: none;
+border: 1px solid #ebebeb;
+
+user-select: none;
+
+background: linear-gradient(#8F0808 0%, #8F0808 100%);
+
+eq(0);first() 和 :first-child 的区别
+
+http://blog.csdn.net/airmario/article/details/53665347
+服务端node.js（NodeSchool） 
+既不是关系型也不是 SQL 查询型的数据库 Mongodb 和 Redis
+
+Math.round Math.ceil Math.floor
+
+简易服务器 node.js HTTP服务器 npm install http-server -g  http-server .
+
+懒加载
+
+echarts图表
+
+toFixed() 方法可把 Number 四舍五入为指定小数位数的数字。
+
+background中cover和contain的区别
+
+rem问题
+
+placeholder
+
+viewport
+
+引入字体加载慢
+
+background
+
+css制作三角形
+
+两行显示省略号
+
+transform
+
+字蛛  字体压缩
+
+css渐变
+
+jq判断一个元素的显示隐藏
+
+
+纯css画叉号
+
+$('.list_content').animate({scrollTop:0}, 1000); 
+
+boolean
+
+cordova 命令
+
+is(:hidden)
+
+    visibility: hidden;
+
+jvid
+
+font-weight
+
+sold与not sold 样式
+
+vertical-align: bottom;  文字怎么居下对齐
+
+图片在div中居中 (定位加transform:translate(-50%,-50%))
+
+jq判断滚动
+
+$('.auction_select').offset().top 元素相对于窗口的位置
+$('.auction_content').scrollTop() 滚动条高度
+position()
+
+is('.active')
+
+event.stopPropagation();
+
+gulp  sourcemap阮一峰
+gulp插件
+gulp-load-plugins 自动加载插件
+gulp-less自动编辑less
+gulp-sourcemaps 出错的时候，除错工具将直接显示原始代码，而不是转换后的代码
+gulp-minify-css 压缩css
+gulp-notify 显示报错信息和报错后不终止当前gulp任务。
+gulp-plumber 捕获处理任务中的错误 
+gulp-rename 重命名
+gulp-uglify js文件压缩
+gulp-minify-html html文件压缩
+gulp-jshint js代码检查
+gulp-concat 文件合并
+gulp-imagemin 图片压缩
+gulp-livereload 自动刷新
+.watch使用changek事件来同步删除情况
+
+<link rel="canonical" href="http://tigerz.nz/home_cn">移动端添加
+<link rel="alternate" href="http://m.tigerz.nz/">pc端添加
+
+//腾讯网的适配代码
+　　<script type="text/javascript">
+　　var browser = {
+　　versions : function() {
+　　var u = navigator.userAgent, app = navigator.appVersion;
+　　return {//移动终端浏览器版本信息
+　　trident : u.indexOf('Trident') > -1, //IE内核
+　　presto : u.indexOf('Presto') > -1, //opera内核
+　　webKit : u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+　　gecko : u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+　　mobile : !!u.match(/AppleWebKit.*Mobile.*/)
+　　|| !!u.match(/AppleWebKit/), //是否为移动终端
+　　ios : !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+　　android : u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+　　iPhone : u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者QQHD浏览器
+　　iPad: u.indexOf('iPad') > -1, //是否iPad
+　　webApp : u.indexOf('Safari') == -1,
+　　//是否web应该程序，没有头部与底部
+　　google:u.indexOf('Chrome')>-1
+　　};
+　　}(),
+　　language : (navigator.browserLanguage || navigator.language).toLowerCase()
+　　}
+　　document.writeln("语言版本: "+browser.language);
+　　document.writeln(" 是否为移动终端: "+browser.versions.mobile);
+　　</script>
+ 
+　　
+　　//其他的适配代码（后缀名为.js 并引用至网页）
+　　<script type="text/javascript">
+　　<!--
+　　//平台、设备和操作系统
+　　var system = {
+　　win: false,
+　　mac: false,
+　　xll: false,
+　　ipad:false
+　　};
+　　//检测平台
+　　var p = navigator.platform;
+　　system.win = p.indexOf("Win") == 0;
+　　system.mac = p.indexOf("Mac") == 0;
+　　system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
+　　system.ipad = (navigator.userAgent.match(/iPad/i) != null)?true:false;
+　　//跳转语句，如果是手机访问就自动跳转到" "里的页面
+　　if (system.win || system.mac || system.xll||system.ipad) {
+　　
+　　} else {
+　　
+　　window.location.href = "   ";
+　　}
+　　-->
+　　</script>
+
+
+分享的方法：
+AddThis分享插件
+https://tumutanzi.com/archives/14893      php分享
+官网
+
+小程序添加字体
+
+trim()字符串去掉俩边空格方法
+
+(getCurrentPages()[getCurrentPages().length - 1]).route   页面路径
+
+页面间传递数据
+
+点击事件时data数据
+
+取反思想
+
+点击事件时需要改变数据，可以通过另一个变量来替换
+
+js四舍五入方法  小程序不支持tofixed（）（打脸  支持）
+
+wx:key
+
+for:in  for:of  遍历区别   
+
+小程序上拉加载时 scroll-view必须设置lower-threshold， 不然会造成触发好几次触底事件
+
+小程序懒加载和设置背景图避免留白
+
+小程序area遍历样式
+
+小程序checkbox   setData()方法问题
+
+小程序 滚动条回到顶部
+
+小程序 自动换行失效   使用white-space:pre-line;
+
+文本垂直居中问题 http://blog.csdn.net/wolinxuebin/article/details/7615098/
+
+input中placeholder颜色问题
+.borker_send_text::-webkit-input-placeholder{
+  color: #464e51;
+}
+
+ie和dom流的区别
+
+谷歌断点
+
+俩行省略 Whitespace值不同，效果不同

@@ -1,0 +1,388 @@
+# Your snippets
+#
+# Atom snippets allow you to enter a simple prefix in the editor and hit tab to
+# expand the prefix into a larger code block with templated values.
+#
+# You can create a new snippet in this file by typing "snip" and then hitting
+# tab.
+#
+# An example CoffeeScript snippet to expand log to console.log:
+#
+# '.source.coffee':
+#   'Console log':
+#     'prefix': 'log'
+#     'body': 'console.log $1'
+#
+# Each scope (e.g. '.source.coffee' above) can only be declared once.
+#
+# This file uses CoffeeScript Object Notation (CSON).
+# If you are unfamiliar with CSON, you can read more about it in the
+# Atom Flight Manual:
+# https://atom.io/docs/latest/using-atom-basic-customization#cson
+
+
+
+############# HTML #############
+# 注意：在HTML文档中，不能使用.source.html 而是使用 .text.html !!!!! 查了2个小时才找到问题
+'.text.html':
+  'viewport':
+    'prefix': 'viewport'
+    'body': '<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">'
+    'description': "for mobile"
+
+  'ng-app':
+    'prefix': 'ng-app'
+    'body': 'ng-app="$1"'
+    'description': 'Angular JS'
+
+  'ng-controller':
+    'prefix': 'ng-controller'
+    'body': 'ng-controller="$1"'
+    'description': 'Angular JS'
+
+  'ng-repeat':
+    'prefix': 'ng-repeat'
+    'body': 'ng-repeat="$1"'
+    'description': 'Angular JS'
+
+  'ng-model':
+    'prefix': 'ng-model'
+    'body': 'ng-model="$1"'
+    'description': 'Angular JS'
+
+  'ng-options':
+    'prefix': 'ng-options'
+    'body': 'ng-options="$1"'
+    'description': 'Angular JS'
+
+  'ng-init':
+    'prefix': 'ng-init'
+    'body': 'ng-init="$1"'
+    'description': 'Angular JS'
+
+  'ng-disabled':
+    'prefix': 'ng-disabled'
+    'body': 'ng-disabled="$1"'
+    'description': 'Angular JS'
+
+  'ng-show':
+    'prefix': 'ng-show'
+    'body': 'ng-show="$1"'
+    'description': 'Angular JS'
+
+  'ng-hide':
+    'prefix': 'ng-hide'
+    'body': 'ng-hide="$1"'
+    'description': 'Angular JS'
+
+  'ng-click':
+    'prefix': 'ng-click'
+    'body': 'ng-click="$1"'
+    'description': 'Angular JS'
+
+  '{{}}':
+    'prefix': 'an'
+    'body': '{{ $1 }}'
+    'description': 'Angular JS'
+
+  'ng-include':
+    'prefix': 'ng-include'
+    'body': 'ng-include="$1"'
+    'description': 'Angular JS'
+    'description': 'Angular JS'
+
+  'ng-class':
+    'prefix': 'ng-class'
+    'body': 'ng-class="$1"'
+    'description': 'Angular JS'
+
+  'ng-bind':
+    'prefix': 'ng-bind'
+    'body': 'ng-bind="$1"'
+    'description': 'Angular JS'
+
+  'ng-view':
+    'prefix': 'ng-view'
+    'body': 'ng-view="$1"'
+    'description': 'Angular JS'
+
+
+  'HTML':
+    'prefix': 'html5'
+    'body': '''
+        <!DOCTYPE html>
+        <html>
+            <head>
+                <meta charset="utf-8">
+                <title></title>
+                <style media="screen">
+                    * {
+                        margin: 0;
+                        padding: 0;
+                    }
+
+                </style>
+            </head>
+            <body>
+
+                $1
+
+            </body>
+            <script type="text/javascript">
+
+            </script>
+        </html>
+    '''
+    'description': 'html init with script and css'
+
+  'baiduTemplate':
+    'prefix': 'baidutemplate'
+    'body': '<% $1 %>'
+    'description': 'baiduTemplate.js'
+
+
+
+
+
+
+#############  CSS #############
+# 暂时还不可以使用，原因未查明。。。。
+'.source.css':
+  'Multiline comment':
+    'prefix': '///'
+    'body': '''
+        /*
+          $1
+        */
+     '''
+
+
+
+
+#############  JS  #############
+'.source.js':
+  'document.write()':
+    'prefix': 'write'
+    'body': 'document.write("$1");'
+
+  'get element by id':
+    'prefix': 'gi'
+    'body': 'document.getElementById("$1");'
+    'description': 'get element by id'
+
+  'query selector':
+    'prefix': 'qs'
+    'body': 'document.querySelector("$1");'
+    'description': 'query element by selector'
+
+  'query selector all':
+    'prefix': 'qsa'
+    'body': 'document.querySelectorAll("$1");'
+    'description': 'get elements by querySelectorAll'
+
+  'create new element':
+    'prefix': 'ce'
+    'body':'document.createElement("$1");'
+    'description':'document.createElement'
+
+  'angular_module':
+    'prefix': 'module'
+    'body': 'var app = angular.module("$1", []);'
+    'description': 'Angular JS'
+
+  'function':
+    'prefix': 'func'
+    'body': '''
+    function ($1) {
+        $2
+    }
+    '''
+    'description': 'JavaScript Native'
+
+  'controller':
+    'prefix': 'controller'
+    'body': '''
+    app.controller("$1", function ($scope) {
+        $2
+    });
+    '''
+    'description': 'Angular JS'
+
+  'directive':
+    'prefix': 'directive'
+    'body': '''
+    app.directive("$1", function () {
+        return {
+            restrict: "ECMA",
+            replace: true,
+            template: "$2"
+        };
+    });
+    '''
+    'description': 'Angular JS'
+
+  'createClass':
+    'prefix': 'createClass'
+    'body': '''
+    var MyComponent = React.createClass({
+        render: function () {
+            return $1;
+        }
+    });
+    '''
+    'description': 'React JS'
+
+  'render':
+    'prefix': 'render'
+    'body': '''
+    ReactDOM.render(
+        $1,
+        document.getElementById("$2")
+    );
+    '''
+    'description': 'React JS'
+
+  'alert':
+    'prefix': 'alert'
+    'body': 'alert($1);'
+    'description': 'JavaScript Native'
+
+  'require-requirejs':
+    'prefix': 'require-requirejs'
+    'body': '''
+        require(['$1'], function () {
+
+        });
+    '''
+    'description': 'RequireJS require'
+
+  'config-requirejs':
+    'prefix': 'config-requirejs'
+    'body': '''
+        require.config({
+            baseUrl: './$1',
+            paths: {
+                '': ''
+            }
+        });
+    '''
+    'description': 'RequireJS config'
+
+  'define-requirejs':
+    'prefix': 'define-requirejs'
+    'body': '''
+        define([$1], function () {
+
+        });
+    '''
+    'description': 'RequireJS define'
+
+  'define-seajs':
+    'prefix': 'define-seajs'
+    'body': '''
+    define(function (require, exports, module) {
+
+        $1
+
+    });
+    '''
+    'description': 'SeaJS define'
+
+  'jquery':
+    'prefix': 'jquery'
+    'body': "$('$1')"
+    'description': 'jQuery选择器'
+
+  'canvas1':
+    'prefix': 'getctx'
+    'body': '''
+        var canvas = document.getElementById('canvas');
+        var ctx = canvas.getContext('2d');
+        var canvasWidth = canvas.width;
+        var canvasHeight = canvas.height;
+    '''
+    'description': 'Canvas Get Context'
+
+  'canvas2':
+    'prefix': 'clearRect'
+    'body': 'ctx.clearRect(0, 0, canvasWidth, canvasHeight);'
+    'description': 'Canvas clear rect'
+
+  'config-angularjs':
+    'prfix': 'config-angularjs'
+    'body': '''
+        app.config(['$routeProvider', function ($routeProvider) {
+            $routeProvider.when('/', {
+                $1
+            }).otherwise({
+                redirectTo: '/'
+            });
+        }]);
+    '''
+    'description': 'angularJS config'
+
+  'config-angularjs':
+    'prefix': 'config-angularjs'
+    'body': '''
+        app.config(['$routeProvider', function ($routeProvider) {
+            $routeProvider.when('/', {
+                $1
+            }).otherwise({
+                redirectTo: '/'
+            });
+        }]);
+    '''
+    'description': 'AngularJS config'
+
+  'factory-angularjs':
+    'prefix': 'factory-angularjs'
+    'body': '''
+        app.factory('$1Factory', function () {
+            return {
+                $2
+            };
+        });
+    '''
+    'description': 'AngularJS factory'
+
+  'service-angularjs':
+    'prefix': 'service-angularjs'
+    'body': '''
+        app.service('$1Server', function () {
+            this.funcName = function () {
+
+            };
+        });
+    '''
+    'description': 'AngularJS service'
+
+
+  'new vue':
+    'prefix': 'vue'
+    'body': '''
+        var vm = new Vue({
+            el: '$1',
+            data: {
+
+            },
+            methods: {
+
+            },
+            computed: {
+
+            }
+        });
+    '''
+    'description': 'new Vue Instance'
+
+  'new vue component':
+    'prefix': 'vueComponent'
+    'body': '''
+        Vue.component('$1', {
+            template: '$2',
+            data: function () {
+                return {};
+            }
+        });
+    '''
+    'description': 'new Vue Instance'

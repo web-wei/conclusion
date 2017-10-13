@@ -1,0 +1,47 @@
+﻿===菜单的URL能够带上openid进行跳转===
+正常菜单的url都是写死的，如果想知道具体是哪个用户发来的请求，就希望带上用户的openid 流程大概如下：
+https://zhidao.baidu.com/question/1303627230532721299.html? 其中的第二部
+
+不过可能会遇到redirect_uri 错误的问题，是由于没有设置回调授权域名 ：
+微信公众平台的公众号设置——功能设置——网页授权域名 可以设置
+
+要想能够点击菜单，菜单类型必须是view
+
+===简单理解===
+appid 相当于 公众号的用户名
+app_secret 相当于 公众号的密码
+access_token 相当于session ，2小时过期，这个要随时刷新
+
+
+===获取accsss_token===
+https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx7064473f5d9e12d1&secret=3c78b0051f47ac05d43a43539e8575e4
+
+===创建自定义菜单
+
+?{
+? ? ?"button":[
+? ? ?{? ?
+? ? ? ? ? "type":"click",
+? ? ? ? ? "name":"今日歌曲4",
+? ? ? ? ? "key":"V1001_TODAY_MUSIC"
+? ? ? },
+? ? ? {
+? ? ? ? ? ?"name":"菜单",
+? ? ? ? ? ?"sub_button":[
+? ? ? ? ? ?{? ?
+? ? ? ? ? ? ? ?"type":"view",
+? ? ? ? ? ? ? ?"name":"搜索",
+? ? ? ? ? ? ? ?"url":"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx7064473f5d9e12d1&redirect_uri=http://game.tigerz.nz/api/wxgongzhonghao&response_type=code&scope=snsapi_base&state=123#wechat_redirect"
+? ? ? ? ? ? },
+? ? ? ? ? ? {
+? ? ? ? ? ? ? ?"type":"click",
+? ? ? ? ? ? ? ?"name":"赞一下我们",
+? ? ? ? ? ? ? ?"key":"V1001_GOOD"
+? ? ? ? ? ? }]
+? ? ? ?}]
+?}
+
+
+===一上来的基本配置===
+公众号=》基本配置
+注意，绑定服务器地址的时候，这个地址必须是80 端口，其他端口不行

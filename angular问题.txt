@@ -1,0 +1,42 @@
+angular.element
+
+ng-hide true隐藏false显示
+
+http://www.cnblogs.com/mengruying/p/5504625.html
+
+$locationProvider.html5Mode  //默认页面
+
+go语言 scala语言
+
+iframe   http://www.cnblogs.com/limeiky/p/5856506.html http://www.zhangxinxu.com/wordpress/2010/12/%E5%B0%8Ftip%EF%BC%9Aiframe%E9%AB%98%E5%BA%A6%E5%8A%A8%E6%80%81%E8%87%AA%E9%80%82%E5%BA%94/
+
+$sce(坑、注入时报错，解决方法，最后一个注入，可能顺序有错)http://www.cnblogs.com/xing901022/p/5100551.html
+
+http://www.jb51.net/article/50197.htm （if判断）
+
+怎么让图片在div中垂直居中
+http://blog.csdn.net/freshlover/article/details/11579669
+
+$timeout
+http://www.cnblogs.com/liulangmao/p/4526126.html
+http://www.mamicode.com/info-detail-1508822.html
+
+ng-if坑
+
+svg
+http://www.zhangxinxu.com/wordpress/2014/08/so-powerful-svg-smil-animation/
+
+
+slideDown(）与animate()  http://sxlkk.iteye.com/blog/2022690
+
+$('.dai_item_note').offset().top
+
+opera是一个内核  firefox是一个
+剩余都是是webkit内核
+
+http://lucene321.iteye.com/blog/1144300  ie下ajax问题
+http://bbs.csdn.net/topics/391888860 解决上个问题
+
+ie语句 http://www.cnblogs.com/zhengenru2008/archive/2009/09/10/1564092.html
+
+滚动时，使用$('html,body')，$('body')在ie firebox不兼容

@@ -1,0 +1,332 @@
+vue-cli 安装
+http://www.jianshu.com/p/1626b8643676
+配置内容
+
+meta标签作用
+
+<!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+<meta name="HandheldFriendly" content="true">
+<!-- 这个网页可以被搜索引擎搜索到 -->
+<meta name="robots" content="all">
+<!-- 作者 -->
+<meta name="author" content="TigerZ" />
+<!-- 版权 -->
+<meta name="copyright" content="tigerz.nz" />
+<!-- 网页自适应（主要移动端） -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<!-- 微软的老式浏览器 -->
+<meta name="MobileOptimized" content="320">
+<!-- safari中手机号码不被显示为拨号链接 -->
+<meta name="format-detection" content="telephone=no">
+<!-- 网页适合在移动设备上进行浏览 -->
+<meta name="applicable-device" content="mobile">
+<!-- 浏览器内核控制 -->
+<meta name="renderer" content="webkit">
+
+<style scoped> “作用域”属性限制CSS添加到该组件
+scoped 属性是一个布尔属性。
+如果使用该属性，则样式仅仅应用到 style 元素的父元素及其子元素。
+
+@相当于 ../
+
+<style media="screen">
+
+npm run dev 报错
+
+atom让vue支持emmet
+
+vue支持less
+
+原生dom操作
+
+es6 [] = []
+
+static和assets的区别
+https://athena0304.gitbooks.io/vue-template-webpack-cn/content/
+
+vscode中对于vue文件安装vetur插件后html没有emmet提示了，在设置中添加以下代码
+"emmet.showAbbreviationSuggestions": true,
+    "emmet.showExpandedAbbreviation": "always",
+    "emmet.includeLanguages": {
+        "vue-html": "html",
+        "vue": "html"
+    }
+
+vue2+element ui 后台管理系统：https://segmentfault.com/a/1190000008582706
+
+vue项目结构 https://athena0304.gitbooks.io/vue-template-webpack-cn/content/
+
+前端网站
+https://www.awesomes.cn/
+https://www.awesomes.cn/subject/vue#应用-框架
+
+https://www.qcloud.com/community/article/983896  （vscode）
+
+http://www.jianshu.com/p/bd157bb56f38  (代码片段) （纠错 在vue中写不是vue-html）https://segmentfault.com/a/1190000008749631 
+
+sync : reset extension settings(vscode 重新设置token) 
+http://www.cnblogs.com/kenz520/p/7416836.html
+
+如何设置css3中placeholder的字体颜色听语音
+http://jingyan.baidu.com/article/09ea3ede0f1ae2c0afde397e.html
+
+注册流程
+http://blog.csdn.net/silvia__/article/details/39056235
+http://www.jb51.net/article/115850.htm
+http://blog.csdn.net/u012027874/article/details/52125831 (手机发送验证码)
+http://www.zuidaima.com/share/1834762971532288.htm
+
+input:focus
+
+
+function getQueryString(name) {
+  var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+  var r = window.location.search.substr(1).match(reg);
+  if (r != null) return unescape(r[2]);
+  return null;
+}
+
+var id = "{op=23,we=23}";
+var idd = id.split(/[{ =, }]/);
+console.log(idd);
+
+css内容垂直居中 http://www.cnblogs.com/moqiutao/p/4807792.html  http://www.cnblogs.com/xinxingyu/p/4665386.html
+
+
+vue-resource 网络模块   使用各种请求方式  http://www.cnblogs.com/axl234/p/5899137.html
+https://github.com/pagekit/vue-resource/blob/master/docs/http.md
+
+
+editorconfig （webstorm解决 不同编辑器缩进不同）
+
+
+
+vue项目打包上线后  ，路径问题 
+1. 将config/index.js 里面的 assetsPublicPath:'/' 改为assetsPublicPath:'./'  
+    2. build/util.js里面的
+    if (options.extract) {
+              return ExtractTextPlugin.extract({
+                            use: loaders,
+                            fallback: 'vue-style-loader',
+                            publicPath:'/'
+    })
+    将其中的publicPath改为：publicPath：'../../'就可以了。这样打包出来的路径就是正确的了。
+
+    第一个是为了改变js中引入图片的路径，改为./ 就是指在当前路径，这个.代表的路径就是assetsRoot+assetsSubDictionary，我这里定位到dist/static/ ，加上图片前缀img，就可以找到了。
+    第二种是为了改变vue文件中使用style样式里面例如background:url('xxx')，这样的路径，因为style最终变成css文件在dist/static/css里面，我们的图片放在dist/static/img中，那么加上../../变成dist目录下，默认的目录前缀是static，img是图片默认前缀，这样就可以定位到图片。
+
+
+flexible  移动端适配方案 https://github.com/amfe/article/issues/17
+
+学习资料 http://note.youdao.com/share/?id=17bad261f619c79140041bf9a598d2b9&type=note#/
+
+如何提问题 https://segmentfault.com/a/1190000007959880
+
+
+坑爹： vue子路由配置path的时候  不用‘/’,直接写名字
+
+decodeURIComponent() 函数  decodeURIComponent() 函数可对 encodeURIComponent() 函数编码的 URI 进行解码。
+
+encodeURIComponent() 函数可把字符串作为 URI 组件进行编码。
+
+
+生命周期钩子的一些使用方法：
+
+beforecreate : 可以在这加个loading事件，在加载实例时触发
+created : 初始化完成时的事件写在这里，如在这结束loading事件，异步请求也适宜在这里调用
+mounted : 挂载元素，获取到DOM节点
+updated : 如果对数据统一处理，在这里写上相应函数
+beforeDestroy : 可以做一个确认停止事件的确认框
+nextTick : 更新数据后立即操作dom
+
+获取RUL传的参数地址 this.$route.query
+
+new Date() utc时间（世界协调时间）  北京时间+ 8小时 = utc时间
+
+有子路由时，父路由不要有name，否则会警告
+
+6225768614927299
+
+8是代理 4是玩家
+
+注意this问题，尤其是异步请求数据回来后，要改变data，切记注意this
+
+webstorm快捷键 代码格式化 ctrl+alt+l
+
+this.$http.jsonp(config.request_prefix, {
+          params: {
+            operator: 'addclub',
+            name: 'zw1',
+            address: 'beijing1',
+            slogan: '加油1',
+            icon: '5@2x.png',
+            agent_uid: this.userInfo.id
+          },
+          jsonp: 'callback'
+        })
+ 
+userRoles(角色) 0创建者 1管理者 2成员 3其他
+userStatus（状态：0申请中或同意拒绝、1已进入俱乐部、2开除、3其他）
+
+vue图片路径从后台传的相对路径要做处理，require('../assets/img/clubIcon/icon9.png')
+
+v-show  :src :alt
+<!-- 阻止单击事件冒泡 -->
+<a v-on:click.stop="doThis"></a>
+<!-- 提交事件不再重载页面 -->
+<form v-on:submit.prevent="onSubmit"></form>
+<!-- 修饰符可以串联 -->
+<a v-on:click.stop.prevent="doThat"></a>
+<!-- 只有修饰符 -->
+<form v-on:submit.prevent></form>
+<!-- 添加事件侦听器时使用事件捕获模式 -->
+<div v-on:click.capture="doThis">...</div>
+<!-- 只当事件在该元素本身 (比如不是子元素) 触发时触发回调 -->
+<div v-on:click.self="doThat">...</div> 
+
+父组件通过props给子组件传数据 https://github.com/webplus/blog/issues/10
+子组件通过事件方式把内部动态，也能传数据，传递给父组件，
+作法：
+父组件监听v-on:abcd="qwert"  qwer(val) {}  // 函数
+子组件 this.$emit('abcd', val); // val可以是对象，数组，任何
+单向数据流
+http://www.jianshu.com/p/a473055076f1
+
+watch监听数据变化，如果监听的是对象，应该用深度 watcher
+watch: {
+    a: function (val, oldVal) {
+      console.log('new: %s, old: %s', val, oldVal)
+    },
+    // 方法名
+    b: 'someMethod',
+    // 深度 watcher
+    c: {
+      handler: function (val, oldVal) { /* ... */ },
+      deep: true
+    }
+  }
+
+路由传参 https://router.vuejs.org/zh-cn/api/router-link.html
+
+table切换时，用伪类元素active,只是激活一下，用hover,点其他地方，就会消失
+
+默认switchStyle为false
+<div :class="switchStyle ? '' : 'clubmanagement_switch' " @click="switchActivity = false; switchPlayer = true; switchStyle = false">成员</div>
+   
+<div :class="switchStyle ? 'clubmanagement_switch' : '' " @click="switchPlayer = false; switchActivity = true; switchStyle = true">活动</div>
+
+
+编程式导航
+that.$router.push({ path: '/clubmanagement' });
+
+js刷新当前页面： location.reload();
+
+我的俱乐部 1295669
+
+?area=mongo_henan&role=8&id=25639&nickname=test_role6&card=0&wxOpenId=owgoAwyfDCLma_O9fc-PQin9N7_U&wxUnionId=ozJqb09dR9MIQjdWVk7oUlWY1IYc&dayu_sign=1c49c2773146d580d7883e222cc613961cf523616d04a236c98c89df52a27c2f29d29f2fad9c03441913ebaf8258e6b7537f2f1f98f1311ca44f185006a5fa49
+
+亮哥
+
+?area=henan&role=4&id=3286403&nickname=%E6%9B%B9%E4%BA%AE&card=12&dayu_sign=6069313be807fbe4de750d088a3c745839a3e96610079fceda38a8c5586dbebc6132cc1f4f4229cbc72cc807446b89648437a5de5f5b087f1fc81055ccec644b
+
+玩家id 5791963 6496229 
+
+
+（1）用户打开商户网页选购商品，发起支付，在网页通过JavaScript调用getBrandWCPayRequest接口，发起微信支付请求，用户进入支付流程。
+（2）用户成功支付点击完成按钮后，商户的前端会收到JavaScript的返回值。商户可直接跳转到支付成功的静态页面进行展示。
+（3）商户后台收到来自微信开放平台的支付成功回调通知，标志该笔订单支付成功。
+注：（2）和（3）的触发不保证遵循严格的时序。JS API返回值作为触发商户网页跳转的标志，但商户后台应该只在收到微信后台的支付成功回调通知后，才做真正的支付成功的处理。
+
+
+
+
+
+cookie怎么用
+
+
+
+微信支付的坑：
+
+公众号支付和h5支付作用相同
+
+配置：
+
+公众号：
+1、功能设置=====》 业务域名 =====》 js接口安全域名 ======》 网页授权域名
+2、AppID
+3、AppSecret
+4、Ip白名单
+
+商户平台：
+1、微信商户平台，开通后，微信会给邮件中发送登录号和密码。 
+2、产品中心====》 开发配置 ======》支付授权目录
+********支付授权目录一定要配到最后一级 （框架注意 #）
+********公众号的授权目录和分享出去的授权目录还不一样
+*******	如  http://game.tigerz.nz/manage/index.html#/shop
+*******	要配到： http://game.tigerz.nz/manage/index.html#/ （公众号）
+*******	要配到： http://game.tigerz.nz/manage（分享）
+
+
+jssdk支付：
+
+使用的打包软件为webpack
+npm install weixin-js-sdk 安装sdk
+在main.js内引入并设置为全局变量
+import wx from 'weixin-js-sdk'
+global.wx = wx
+好了 项目内请随意使用wx吧
+
+wx.config({
+    debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+    appId: '', // 必填，公众号的唯一标识
+    timestamp: , // 必填，生成签名的时间戳
+    nonceStr: '', // 必填，生成签名的随机串
+    signature: '',// 必填，签名，见附录1
+    jsApiList: [] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+});
+
+// ================= 调用jssdk微信支付 =======================
+wx.ready(function(){
+    // config信息验证后会执行ready方法，所有接口调用都必须在config接口获得结果之后，config是一个客户端的异步操作，所以如果需要在页面加载时就调用相关接口，则须把相关接口放在ready函数中调用来确保正确执行。对于用户触发时才调用的接口，则可以直接调用，不需要放在ready函数中。
+  wx.chooseWXPay({
+      timestamp: 0, // 支付签名时间戳，注意微信jssdk中的所有使用  timestamp字段均为小写。但最新版的支付后台生成签名使用的timeStamp字段  名需大写其中的S字符
+      nonceStr: '', // 支付签名随机串，不长于 32 位
+      package: '', // 统一支付接口返回的prepay_id参数值，提交格式如：  prepay_id=***）
+      signType: '', // 签名方式，默认为'SHA1'，使用新版支付需传入'MD5'
+      paySign: '', // 支付签名
+      success: function (res) {
+          // 支付成功后的回调函数
+      }
+  });
+
+});
+
+// ==================== 调用h5支付 ==============================
+function onBridgeReady(){
+   WeixinJSBridge.invoke(
+       'getBrandWCPayRequest', {
+           "appId":"wx2421b1c4370ec43b",     //公众号名称，由商户传入     
+           "timeStamp":"1395712654",         //时间戳，自1970年以来的秒数     
+           "nonceStr":"e61463f8efa94090b1f366cccfbbb444", //随机串     
+           "package":"prepay_id=u802345jgfjsdfgsdg888",     
+           "signType":"MD5",         //微信签名方式：     
+           "paySign":"70EA570631E4BB79628FBCA90534C63FF7FADD89" //微信签名 
+       },
+       function(res){     
+           if(res.err_msg == "get_brand_wcpay_request:ok" ) {}     // 使用以上方式判断前端返回,微信团队郑重提示：res.err_msg将在用户支付成功后返回    ok，但并不保证它绝对可靠。 
+       }
+   ); 
+}
+if (typeof WeixinJSBridge == "undefined"){
+   if( document.addEventListener ){
+       document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+   }else if (document.attachEvent){
+       document.attachEvent('WeixinJSBridgeReady', onBridgeReady); 
+       document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+   }
+}else{
+   onBridgeReady();
+}
+
+
+
