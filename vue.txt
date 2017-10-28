@@ -129,6 +129,9 @@ decodeURIComponent() 函数  decodeURIComponent() 函数可对 encodeURIComponent() 函
 
 encodeURIComponent() 函数可把字符串作为 URI 组件进行编码。
 
+JS中decodeURI()与decodeURIComponent()区别
+http://blog.csdn.net/zyu67/article/details/43951653
+
 
 生命周期钩子的一些使用方法：
 
@@ -227,7 +230,7 @@ js刷新当前页面： location.reload();
 
 亮哥
 
-?area=henan&role=4&id=3286403&nickname=%E6%9B%B9%E4%BA%AE&card=12&dayu_sign=6069313be807fbe4de750d088a3c745839a3e96610079fceda38a8c5586dbebc6132cc1f4f4229cbc72cc807446b89648437a5de5f5b087f1fc81055ccec644b
+?area=henan&role=4&id=3286403&nickname=%E6%9B%B9%E4%BA%AE&card=32&wxOpenId=owgoAw7r1mKiM1qsH9WaZCKNLUEQ&wxUnionId=ozJqb04egtwtWZnBy3TvJ74zerms&dayu_sign=6069313be807fbe4de750d088a3c745839a3e96610079fceda38a8c5586dbebc078deb4c35f9c17c053c16364af711a65e3c1b48facfcdbcba5158a30b09fc8e
 
 玩家id 5791963 6496229 
 
@@ -260,7 +263,7 @@ cookie怎么用
 商户平台：
 1、微信商户平台，开通后，微信会给邮件中发送登录号和密码。 
 2、产品中心====》 开发配置 ======》支付授权目录
-********支付授权目录一定要配到最后一级 （框架注意 #）
+********支付授权目录一定要配到最后一级 （框架注意 #）如果是 ? 微信会忽略？后面的
 ********公众号的授权目录和分享出去的授权目录还不一样
 *******	如  http://game.tigerz.nz/manage/index.html#/shop
 *******	要配到： http://game.tigerz.nz/manage/index.html#/ （公众号）
@@ -341,6 +344,36 @@ http://www.cnblogs.com/fsjohnhuang/p/4147810.html
 http://xgfe.github.io/2016/12/22/zhouxiong/Vue2.0+Vue-router2.0+Vuex2.0/
 
 25693
+
+
+vue路由和微信授权目录坑
+http://greedying.com/posts/problems-in-develop-spa-website-of-wechat-with-vue/
+
+设置时，url前面加个问好，微信回吧？后面的全当参数处理
+
+
+页面间传参，两种方式：（https://github.com/jackPanyj/learning-note/issues/13）
+/data/:id这个路由匹配/data/1,/data/2这里的 id 叫 params
+
+/data?id=1 /data?id=2 这里的 id 叫 query
+
+如果用params,用路由name，如果用 query，用路由path
+
+
+vue子路由
+{ path: '/home', component: Home, children:[
+      { path: '/', name: 'Test', component: Test },
+      { path: 'testt', name: 'Testt', component: Testt }
+    ]}
+页面
+<router-link to="/home/testt">
+      <div class="home_detail_assignmentFangka home_detail_common">
+        <p>转让房卡</p>
+        <span class="beijing_jiantou"></span>
+      </div>
+      </router-link>
+
+
 
 
 

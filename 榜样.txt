@@ -15,3 +15,5 @@ http://www.itvideos.info/ （资源）
 https://jeffjade.com/ （晚晴幽草轩）
 
 http://www.cnblogs.com/canfoo/  （前端攻城师）
+
+https://leohxj.gitbooks.io/a-programmer-prepares/software/develop-tool/webstorm.html
