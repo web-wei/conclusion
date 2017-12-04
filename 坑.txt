@@ -1,1 +1,2 @@
-1、华为手机浏览器不支持es6新特性，比如 let这些
+1、华为手机浏览器不支持es6新特性，比如 let这些、function(){}
+2、行内快元素垂直居中，直接设置 vertical-align: middle;

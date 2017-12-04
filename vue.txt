@@ -374,6 +374,39 @@ vue子路由
       </router-link>
 
 
+//=========================== input获得焦点时，手机软键盘自动滚动到当前位置 ===========
+  $('input').on('focus', function(){
+    this.scrollIntoView();
+  })
+// ======================= 手机软键盘与height为百分比时冲突
+http://www.cnblogs.com/yexiaochai/p/3561939.html
+
+移动端在使用input数字number类型的时候maxlength竟然无效，因为是手机号码限止11位数字输入。
+
+<input type="text"  maxlength="11" />   效果ok，当 <input type="number"  maxlength="11" />时maxlength失效，长度可以无限输入。
+
+<input type="number" oninput="if(value.length>11)value=value.slice(0,11)" />  
+
+<input type='button'>背景色在ios中的兼容性，颜色发白 
+在全局样式中加入一下代码即可： 
+input[type=button], input[type=submit], input[type=file], button { cursor: pointer; -webkit-appearance: none; } 
+
+
+
+
+
+vue中 select 的 v-model和 option的value绑定
+
+height和line-height一样，却没有居中，可能是border影响，减去border的值
+
+
+vue获取href的值 :href="registerUrl"; registerUrl字符串拼接的时候必须是双引号。
+
+
+url-loader图片大小有限制，可以到配置里面调limit的大小限制
+
+微信配置config时
+确保你获取用来签名的url是动态获取的，动态页面可参见实例代码中php的实现方式。如果是html的静态页面在前端通过ajax将url传到后台签名，前端需要用js获取当前页面除去'#'hash部分的链接（可用location.href.split('#')[0]获取,而且需要encodeURIComponent），因为页面一旦分享，微信客户端会在你的链接末尾加入其它参数，如果不是动态获取当前链接，将导致分享后的页面签名失败。
 
 
 

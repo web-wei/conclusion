@@ -17,3 +17,5 @@ https://jeffjade.com/ £¨ÍíÇçÓÄ²ÝÐù£©
 http://www.cnblogs.com/canfoo/  £¨Ç°¶Ë¹¥³ÇÊ¦£©
 
 https://leohxj.gitbooks.io/a-programmer-prepares/software/develop-tool/webstorm.html
+
+https://www.ibm.com/developerworks/cn/web/wa-speedweb/index.html

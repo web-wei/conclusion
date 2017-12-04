@@ -40,3 +40,24 @@ http://bbs.csdn.net/topics/391888860 解决上个问题
 ie语句 http://www.cnblogs.com/zhengenru2008/archive/2009/09/10/1564092.html
 
 滚动时，使用$('html,body')，$('body')在ie firebox不兼容
+
+
+angular指令： https://www.w3ctech.com/topic/1612
+app.directive('userName', function(){
+	return {
+		restrict: 'E', // E:允许作为一个元素，A：允许作为一个属性，C:允许作为一个类名，M:允许作为一个注释
+		scope: {
+			city: '=' // 可以是 = 或者 @ 或者 & ，city是传过来的值 =是数据双向绑定
+		}，
+		replace: true, // true- 模板将替换当前的元素 false - 模板将替换当前元素的内容
+		templateUrl: '../index.html', // 模板地址
+		transclude: true, // transclude 对元素内容的编译和指令中使其可用。true,允许嵌套，并且本地scope和父级scope都是独立的， false,只显示本地内容， element，显示父级内容
+		link: function (scope, element, attr) {
+			// scope,本作用域scope
+			// element， 标签
+			// attr, 所有内容
+		}
+	}
+})
+
+
