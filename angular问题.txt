@@ -61,3 +61,24 @@ app.directive('userName', function(){
 })
 
 
+input radio 单选框中 ng-mode是当前选中的值,， ng-value是这个radio的值。
+
+input number  （解决的问题：1、type为number时不maxlength失效 2、type为number时可以输入字母e）
+
+http://blog.csdn.net/ilv_xj/article/details/71750815 	https://stackoverflow.com/questions/18510845/maxlength-ignored-for-input-type-number-in-chrome
+
+<input type="number" required maxlength="4" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+ onkeypress="return (/[\d]/.test(String.fromCharCode(event.keyCode)))"
+
+/>
+
+
+ng-repeat 通过$index获取索引 如：ng-repeat="image in allValue.mulImages track by $index"
+好多循环的话，$index容易混乱 每一层使用ng-init, 如：ng-init ='outerIndex = $index' 定义各自的$index
+http://angular-china.org/topic/15/hacking-with-angular-%E5%A6%82%E4%BD%95%E5%9C%A8%E6%B7%B1%E5%B1%82%E5%B5%8C%E5%A5%97ngrepeat%E4%B8%AD%E8%8E%B7%E5%8F%96%E4%B8%8D%E5%90%8C%E5%B1%82%E7%BA%A7%E7%9A%84-index
+
+http://www.cnblogs.com/2050/p/3569509.html
+:first-child 匹配的是某父元素的第一个子元素，可以说是结构上的第一个子元素。
+:first-of-type 匹配的是某父元素下相同类型子元素中的第一个，比如 p:first-of-type，就是指所有类型为p的子元素中的第一个。这里不再限制是第一个子元素了，只要是该类型元素的第一个就行了。
+
+
