@@ -61,6 +61,22 @@ app.directive('userName', function(){
 })
 
 
+
+
+
+ng-repeat 通过$index获取索引 如：ng-repeat="image in allValue.mulImages track by $index"
+好多循环的话，$index容易混乱 每一层使用ng-init, 如：ng-init ='outerIndex = $index' 定义各自的$index
+http://angular-china.org/topic/15/hacking-with-angular-%E5%A6%82%E4%BD%95%E5%9C%A8%E6%B7%B1%E5%B1%82%E5%B5%8C%E5%A5%97ngrepeat%E4%B8%AD%E8%8E%B7%E5%8F%96%E4%B8%8D%E5%90%8C%E5%B1%82%E7%BA%A7%E7%9A%84-index
+
+http://www.cnblogs.com/2050/p/3569509.html
+:first-child 匹配的是某父元素的第一个子元素，可以说是结构上的第一个子元素。
+:first-of-type 匹配的是某父元素下相同类型子元素中的第一个，比如 p:first-of-type，就是指所有类型为p的子元素中的第一个。这里不再限制是第一个子元素了，只要是该类型元素的第一个就行了。
+
+
+表单验证： form
+
+form表单需要name属性,
+
 input radio 单选框中 ng-mode是当前选中的值,， ng-value是这个radio的值。
 
 input number  （解决的问题：1、type为number时不maxlength失效 2、type为number时可以输入字母e）
@@ -72,13 +88,22 @@ http://blog.csdn.net/ilv_xj/article/details/71750815 	https://stackoverflow.com/
 
 />
 
+http://www.cnblogs.com/woshinidezhu/p/Form-validation-with-AngularJS.html
+http://huangtengfei.com/2016/03/angularjs-form-validate/
 
-ng-repeat 通过$index获取索引 如：ng-repeat="image in allValue.mulImages track by $index"
-好多循环的话，$index容易混乱 每一层使用ng-init, 如：ng-init ='outerIndex = $index' 定义各自的$index
-http://angular-china.org/topic/15/hacking-with-angular-%E5%A6%82%E4%BD%95%E5%9C%A8%E6%B7%B1%E5%B1%82%E5%B5%8C%E5%A5%97ngrepeat%E4%B8%AD%E8%8E%B7%E5%8F%96%E4%B8%8D%E5%90%8C%E5%B1%82%E7%BA%A7%E7%9A%84-index
+$dirty 表单有填写记录 交互状态
+$valid 字段内容合法的 验证通过
+$invalid 字段内容是非法的
+$pristine 表单没有填写记录
+ng-touched 未访问状态
+myForm.email.$error.email
+.ng-pristine {}
+.ng-dirty {}
+.ng-valid {}
+.ng-invalid {}
 
-http://www.cnblogs.com/2050/p/3569509.html
-:first-child 匹配的是某父元素的第一个子元素，可以说是结构上的第一个子元素。
-:first-of-type 匹配的是某父元素下相同类型子元素中的第一个，比如 p:first-of-type，就是指所有类型为p的子元素中的第一个。这里不再限制是第一个子元素了，只要是该类型元素的第一个就行了。
+点击提交后显示验证信息
+当时去焦点时验证错误
 
+分三步：1、获取焦点的时候提示验证 2、失去焦点正确的时候，显示对号，3、失去焦点错误的时候。显示错误信息
 
