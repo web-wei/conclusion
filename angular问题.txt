@@ -107,3 +107,7 @@ myForm.email.$error.email
 
 分三步：1、获取焦点的时候提示验证 2、失去焦点正确的时候，显示对号，3、失去焦点错误的时候。显示错误信息
 
+$scope和$rootscope区别
+
+二进制blod
+
